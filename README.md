@@ -4,7 +4,7 @@ Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/
 
 ## Browser
 
-We use [Emscripten]() to compile the ngspice codebased into [WASM](https://webassembly.org/) to run inside [compatible browsers](https://caniuse.com/?search=wasm).
+We use [Emscripten](https://emscripten.org/) to compile the ngspice codebased into [WASM](https://webassembly.org/) to run inside [compatible browsers](https://caniuse.com/?search=wasm).
 
 First clone the repository:
 
