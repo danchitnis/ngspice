@@ -5,7 +5,7 @@ Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/
 ## Build
 
 ```bash
-sudo docker build -t ngspice .
+sudo docker build -t ngspice:ngspice -f ./ngspice/Dockerfile .
 ```
 
 ## Run
