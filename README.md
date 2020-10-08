@@ -13,14 +13,14 @@ git clone https://github.com/danchitnis/ngspice.git
 cd ngspice
 ```
 
-Build the Docker image:
+Build the [Docker](https://www.docker.com/) image:
 
 ```bash
 cd emcc
 sudo docker build -t ngspice:emcc .
 ```
 
-Run the docker image:
+Run the Docker image:
 
 ```bash
 docker run -it -v $(realpath .):/mnt ngspice:emcc
@@ -37,3 +37,7 @@ TBA
 TBA
 
 Notice that the docker image is based on [container-xrdp](https://github.com/danchitnis/container-xrdp)
+
+## Details
+
+TBD
