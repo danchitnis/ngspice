@@ -2,6 +2,8 @@
 
 let textArea = document.getElementById("textArea");
 
+textArea.value = "Click the Start 🚀 button..." + "\n\n\n" + "Netlist information:\n\n" + str2;
+
 Module = {
   arguments: ["-b", "test.cir"],
   //arguments: ["test.cir"]
