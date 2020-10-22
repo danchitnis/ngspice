@@ -21,7 +21,7 @@ RUN dnf -y install autoconf automake make cmake bzip2\
   gcc-c++ libstdc++-static.x86_64
 
 
-RUN dnf -y install libtool bison
+RUN dnf -y install libtool bison xz which
 
 
 
@@ -43,8 +43,8 @@ RUN dnf -y install git wget curl
 
 #USER foo
 
-COPY ./emcc/compile_emcc.sh /home/foo/compile_emcc.sh
-COPY ./emcc/install_emcc.sh /home/foo/install_emcc.sh
+COPY ./compile_emcc.sh /home/foo/compile_emcc.sh
+COPY ./install_emcc.sh /home/foo/install_emcc.sh
 #RUN rm -rf ~/.cache/pip
 
 #USER root
@@ -57,17 +57,17 @@ COPY ./emcc/install_emcc.sh /home/foo/install_emcc.sh
 
 RUN dnf clean all
 
-COPY ./Docker/xrdp.ini /etc/xrdp/
+COPY ./gui/xrdp.ini /etc/xrdp/
 
-COPY ./Docker/fedora-sesman.ini /etc/xrdp/
+COPY ./gui/fedora-sesman.ini /etc/xrdp/
 RUN mv /etc/xrdp/fedora-sesman.ini /etc/xrdp/sesman.ini
 
-COPY ./Docker/startwm-xfce.sh /etc/xrdp/
+COPY ./gui/startwm-xfce.sh /etc/xrdp/
 RUN mv /etc/xrdp/startwm-xfce.sh /etc/xrdp/startwm.sh
 
 RUN chmod a+x /etc/xrdp/startwm.sh
 
-COPY ./Docker/run.sh /
+COPY ./gui/run.sh /
 RUN chmod +x /run.sh
 
 EXPOSE 3389

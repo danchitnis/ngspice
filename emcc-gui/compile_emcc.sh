@@ -3,7 +3,7 @@ echo started...
 
 cd ~
 
-git clone https://git.code.sf.net/p/ngspice/ngspice ngspice-ngspice
+git clone https://github.com/danchitnis/ngspice-sf-mirror.git ngspice-ngspice
 
 wait
 
