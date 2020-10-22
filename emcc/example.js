@@ -29,6 +29,8 @@ Module = {
 
       let pMsg = document.getElementById("pMsg");
       pMsg.innerHTML = "Please refresh the page for a new simulation run";
+
+      textArea.scrollTo(0, 0);
     }),
   ],
   print: (function () {
