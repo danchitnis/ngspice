@@ -1,0 +1,22 @@
+{
+  "name": "ngspice",
+  "version": "1.0.0",
+  "description": "Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/) from source with a focus on command-line operations",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danchitnis/ngspice.git"
+  },
+  "author": "Danial Chitnis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danchitnis/ngspice/issues"
+  },
+  "homepage": "https://github.com/danchitnis/ngspice#readme"
+}
