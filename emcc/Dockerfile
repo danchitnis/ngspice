@@ -16,7 +16,7 @@ RUN dnf -y install git wget curl
 RUN dnf clean all
 
 ## fix the bug in ngspice
-COPY ./misc_time.c /opt/misc_time.c
+# COPY ./misc_time.c /opt/misc_time.c
 
 COPY ./run.sh /
 RUN chmod +x /run.sh
