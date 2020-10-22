@@ -4,9 +4,9 @@
 
 Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/) from source with a focus on command-line operations
 
-## Browser
+## WASM
 
-We use [Emscripten](https://emscripten.org/) to compile the ngspice codebased into [WASM](https://webassembly.org/) to run inside [compatible browsers](https://caniuse.com/?search=wasm).
+We use [Emscripten](https://emscripten.org/) to compile the ngspice codebased into [WASM](https://webassembly.org/) to run client-side inside [compatible browsers](https://caniuse.com/?search=wasm).
 
 First clone the repository:
 
@@ -34,6 +34,10 @@ This will create a new directory `build` which has the generated JS and WASM run
 
 TBA
 
+## Windows
+
+TBA
+
 ## GUI debug container
 
 TBA
@@ -42,4 +46,12 @@ Notice that the docker image is based on [container-xrdp](https://github.com/dan
 
 ## Details
 
-TBD
+See: https://sourceforge.net/p/ngspice/patches/99/
+
+## Contributions
+
+[ngspice](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/)
+
+[Emscripten](https://emscripten.org/)
+
+[SPICE3f5](https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/spice.html)
