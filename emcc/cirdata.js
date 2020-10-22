@@ -657,6 +657,7 @@ str = `Basic RC circuit
   .tran  0.1 7.0
 
   .control
+  version
   set filetype=ascii
   run
   write out.raw
@@ -706,6 +707,7 @@ vb 32 0 dc -20
 *.print tran v(20) v(66)
 .plot  tran v(20) v(66)
 .control
+version
 run
 .endc
 .end 
