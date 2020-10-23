@@ -708,7 +708,7 @@ vb 32 0 dc -20
 .plot  tran v(20) v(66)
 .control
 version
-run
+*run
 .endc
 .end 
 `;
