@@ -8,7 +8,13 @@ jobs:
      # with credentials stored in the UI
      # build the application image
      
-     - run: docker build -t emcc -f ./emcc/Dockerfile .
+     #- run: docker build -t emcc -f ./emcc/Dockerfile .
+     -run: 
+      command: |
+       cd emcc
+       pwd
+       ls
+       docker build -t emcc .
 
      # deploy the image
-     - run: docker run emcc
+     #- run: docker run emcc
