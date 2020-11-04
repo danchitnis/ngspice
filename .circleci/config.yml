@@ -10,9 +10,10 @@ jobs:
      
      #- run: docker build -t emcc -f ./emcc/Dockerfile .
      - run: 
-      command: |
-       cd emcc
-       pwd
-       ls
-       docker build -t emcc .
+        command: |
+          cd ./emcc
+          ls
+          pwd
+          docker build -t emcc .
 
+       
