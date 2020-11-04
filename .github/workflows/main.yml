@@ -10,6 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: run local
-        uses: ./.github/actions/
+        #uses: ./.github/actions/
+        uses: ./emcc/Dockerfile
       
         
