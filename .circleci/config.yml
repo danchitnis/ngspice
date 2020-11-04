@@ -2,12 +2,13 @@ version: 1
 jobs:
  build:
    machine: true
+   working_directory: "~/ngspice/emcc"
    steps:
      - checkout
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
      # build the application image
-     - working_directory: "~/ngspice/emcc"
+     
      - run: docker build -t emcc .
 
      # deploy the image
