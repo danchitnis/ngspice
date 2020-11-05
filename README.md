@@ -2,6 +2,8 @@
 
 # ngspice container tools
 
+[![CircleCI](https://circleci.com/gh/danchitnis/ngspice.svg?style=svg)](https://circleci.com/gh/danchitnis/ngspice)
+
 Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/) from source with a focus on command-line operations
 
 ## WASM
