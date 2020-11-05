@@ -16,10 +16,10 @@ jobs:
           pwd
           docker build -t emcc .
     
-    compile:
-      machine: true
-      steps: 
-      - run: dokcer run -it emcc
+  compile:
+    machine: true
+    steps: 
+    - run: dokcer run -it emcc
 
 
 workflows:
