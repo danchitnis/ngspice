@@ -1,19 +1,25 @@
-version: 1
+version: 2
 jobs:
- build:
-   machine: true
-   steps:
+  test:
+    machine: true
+    steps:
      - checkout
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
      # build the application image
      
      #- run: docker build -t emcc -f ./emcc/Dockerfile .
+    build:
      - run: 
         command: |
           cd ./emcc
           ls
           pwd
           docker build -t emcc .
+    
+    compile:
+     - run: dokcer run -it emcc
+
+    
 
        

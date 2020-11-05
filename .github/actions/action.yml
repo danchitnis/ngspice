@@ -1,8 +1,0 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
-
-runs:
-  using: 'docker'
-  image: './emcc/Dockerfile'
-
