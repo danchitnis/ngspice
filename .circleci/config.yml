@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  build:
     machine: true
     steps:
      - checkout
@@ -9,7 +9,6 @@ jobs:
      # build the application image
      
      #- run: docker build -t emcc -f ./emcc/Dockerfile .
-    build:
      - run: 
         command: |
           cd ./emcc
@@ -18,7 +17,9 @@ jobs:
           docker build -t emcc .
     
     compile:
-     - run: dokcer run -it emcc
+      machine: true
+      steps: 
+      - run: dokcer run -it emcc
 
     
 
