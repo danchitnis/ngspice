@@ -19,7 +19,7 @@ jobs:
   compile:
     machine: true
     steps: 
-    - run: dokcer run -it emcc
+    - run: docker run -it emcc
 
 
 workflows:
