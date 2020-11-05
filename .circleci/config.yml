@@ -15,21 +15,6 @@ jobs:
           ls
           pwd
           docker build -t emcc .
-    
-  compile:
-    machine: true
-    steps: 
-    - run: docker run -it emcc
+     
+     - run: docker run -it emcc
 
-
-workflows:
-  version: 2
-  build-and-compile:
-    jobs:
-    - build
-    - compile:
-        requires:
-        - build
-    
-
-       
