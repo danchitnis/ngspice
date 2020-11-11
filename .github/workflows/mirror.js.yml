@@ -22,7 +22,6 @@ jobs:
       run: |
         git clone --mirror https://git.code.sf.net/p/ngspice/ngspice.git
         cd ngspice.git
-        git remote set-url --push origin https://github.com/danchitnis/ngspice-sf-mirror
         echo -e 'git clone completed'
         git config --global user.name danchitnis
         git config --global user.email 'danchitnis@users.noreply.github.com'
