@@ -31,6 +31,7 @@ jobs:
         
     - name: Push GH
       run: |
+        cd ngspice.git
         git fetch -p origin
         git push --mirror
         echo -e 'git push completed'
