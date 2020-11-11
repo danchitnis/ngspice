@@ -4,21 +4,22 @@
 name: Mirror CI
 
 on:
-  push:
-    branches: [ master ]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 8 * * *'
 
 env: 
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 jobs:
-  build:
+  Mirror:
 
     runs-on: ubuntu-latest
 
 
     steps:
     #- uses: actions/checkout@v2
-    - name: Mirror
+    - name: Mirror SF
       run: |
         git clone --mirror https://git.code.sf.net/p/ngspice/ngspice.git
         cd ngspice.git
