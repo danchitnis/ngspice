@@ -19,7 +19,7 @@ jobs:
 
     steps:
     #- uses: actions/checkout@v2
-    - name: Mirror SF
+    - name: Clone SF
       run: |
         git clone --mirror https://git.code.sf.net/p/ngspice/ngspice.git
         cd ngspice.git
@@ -28,6 +28,9 @@ jobs:
         git config --global user.email 'danchitnis@users.noreply.github.com'
         git remote set-url origin https://danchitnis:$GITHUB_TOKEN@github.com/danchitnis/ngspice-sf-mirror
         echo -e 'git setup completed'
+        
+    - name: Push GH
+      run: |
         git fetch -p origin
         git push --mirror
         echo -e 'git push completed'
