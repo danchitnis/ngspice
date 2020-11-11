@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+      
+jobs:
+
+  build and test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+        cd ./emcc
+        docker build -t emcc .
+        
+    - name: Run Docker
+      run: docker run -it emcc
