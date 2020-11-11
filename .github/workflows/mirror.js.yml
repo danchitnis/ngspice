@@ -17,15 +17,16 @@ jobs:
     #- uses: actions/checkout@v2
     - name: Mirror
       run: |
-        git config --global user.name ${{secrets.NAME}}
-        git config --global user.email 'danchitnis@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/danchitnis/ngspice-sf-mirror
-        echo -e 'git setup completed'
         git clone --mirror https://git.code.sf.net/p/ngspice/ngspice.git
         cd ngspice.git
         git remote set-url --push origin https://github.com/danchitnis/ngspice-sf-mirror
         echo -e 'git clone completed'
+        git config --global user.name ${{secrets.NAME}}
+        git config --global user.email 'danchitnis@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/danchitnis/ngspice-sf-mirror
+        echo -e 'git setup completed'
         git fetch -p origin
         git push --mirror
+        echo -e 'git push completed'
 
 
