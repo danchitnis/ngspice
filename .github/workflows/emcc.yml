@@ -24,4 +24,4 @@ jobs:
         docker build -t emcc .
         
     - name: Run Docker
-      run: docker run -it emcc
+      run: docker run -t emcc
