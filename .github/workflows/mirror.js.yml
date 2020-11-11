@@ -20,4 +20,8 @@ jobs:
         git clone --mirror https://git.code.sf.net/p/ngspice/ngspice.git
         cd ngspice.git
         git remote set-url --push origin https://github.com/danchitnis/ngspice-sf-mirror
+        echo -e 'git setup completed'
+        git fetch -p origin
+        git push --mirror
+
 
