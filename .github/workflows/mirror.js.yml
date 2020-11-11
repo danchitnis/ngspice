@@ -7,6 +7,15 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 8 * * *'
+      
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 
 env: 
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
