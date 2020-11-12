@@ -27,7 +27,7 @@ jobs:
       run: |
         mkdir build
         cd build
-        docker run -it -v $(realpath .):/mnt ngspice:emcc
+        docker run -t -v $(realpath .):/mnt ngspice:emcc
     
     - name: test
       run: |
