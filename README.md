@@ -4,7 +4,8 @@
 
 Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/) from source with a focus on command-line operations
 
-## WASM
+## WASM 
+![EMCC Build CI](https://github.com/danchitnis/ngspice/workflows/EMCC%20Build%20CI/badge.svg)
 
 We use [Emscripten](https://emscripten.org/) to compile the ngspice codebased into [WASM](https://webassembly.org/) to run client-side inside [compatible browsers](https://caniuse.com/?search=wasm).
 
@@ -47,6 +48,7 @@ TBA
 Notice that the docker image is based on [container-xrdp](https://github.com/danchitnis/container-xrdp)
 
 ## ngspice mirror on Github
+![Mirror CI](https://github.com/danchitnis/ngspice/workflows/Mirror%20CI/badge.svg)
 
 See: https://github.com/danchitnis/ngspice-sf-mirror
 
