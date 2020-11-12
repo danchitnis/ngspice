@@ -42,7 +42,9 @@ jobs:
       run: |
         cd ngspice.git
         git fetch -p origin
+        wait
         git push --mirror
+        wait
         echo -e 'git push completed'
 
 
