@@ -46,7 +46,7 @@ TBA
 
 Notice that the docker image is based on [container-xrdp](https://github.com/danchitnis/container-xrdp)
 
-## ngpspice mirror on Github
+## ngspice mirror on Github
 
 See: https://github.com/danchitnis/ngspice-sf-mirror
 
