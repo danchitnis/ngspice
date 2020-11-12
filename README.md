@@ -2,7 +2,7 @@
 
 # ngspice container tools
 
-Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/) from source with a focus on command-line operations
+Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/) from source with a focus on command-line operations
 
 ## WASM
 
@@ -30,13 +30,15 @@ docker run -it -v $(realpath .):/mnt ngspice:emcc
 
 This will create a new directory `build` which has the generated JS and WASM runtime files.
 
+For patch details See: https://sourceforge.net/p/ngspice/patches/99/
+
 ## Linux
 
-TBA
+Coming soon...
 
 ## Windows
 
-TBA
+Coming soon...
 
 ## GUI debug container
 
@@ -44,9 +46,11 @@ TBA
 
 Notice that the docker image is based on [container-xrdp](https://github.com/danchitnis/container-xrdp)
 
-## Details
+## ngpspice mirror on Github
 
-See: https://sourceforge.net/p/ngspice/patches/99/
+See: https://github.com/danchitnis/ngspice-sf-mirror
+
+This mirrored repository is updated automatically on a daily basis using Github Actions
 
 ## Contributions
 
