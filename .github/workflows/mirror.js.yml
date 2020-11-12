@@ -35,7 +35,7 @@ jobs:
         echo -e 'git clone completed'
         git config --global user.name danchitnis
         git config --global user.email 'danchitnis@users.noreply.github.com'
-        git remote set-url origin https://danchitnis:$GITHUB_TOKEN@github.com/danchitnis/ngspice-sf-mirror
+        git remote set-url --push origin https://danchitnis:$GITHUB_TOKEN@github.com/danchitnis/ngspice-sf-mirror
         echo -e 'git setup completed'
         
     - name: Fetch SF
