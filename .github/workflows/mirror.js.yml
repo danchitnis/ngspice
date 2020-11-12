@@ -38,13 +38,16 @@ jobs:
         git remote set-url origin https://danchitnis:$GITHUB_TOKEN@github.com/danchitnis/ngspice-sf-mirror
         echo -e 'git setup completed'
         
-    - name: Push GH
+    - name: Fetch SF
       run: |
         cd ngspice.git
         git fetch -p origin
-        wait
+        
+    - name: Push GH
+      run: |
+        cd ngspice.git
         git push --mirror
-        wait
         echo -e 'git push completed'
+
 
 
