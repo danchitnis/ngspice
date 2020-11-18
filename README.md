@@ -66,9 +66,10 @@ TBA
 
 Notice that the docker image is based on [container-xrdp](https://github.com/danchitnis/container-xrdp)
 
-## ngspice mirror
+## Ngspice mirror
 
 ![Mirror CI](https://github.com/danchitnis/ngspice/workflows/Mirror%20CI/badge.svg)
+
 https://github.com/danchitnis/ngspice-sf-mirror
 
 ## Details
