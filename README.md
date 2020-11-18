@@ -2,7 +2,7 @@
 
 # ngspice container tools
 
-[![CircleCI](https://circleci.com/gh/danchitnis/ngspice.svg?style=svg)](https://circleci.com/gh/danchitnis/ngspice)
+![EMCC Build CI](https://github.com/danchitnis/ngspice/workflows/EMCC%20Build%20CI/badge.svg)
 
 Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/ci/master/tree/) from source with a focus on command-line operations
 
@@ -65,6 +65,11 @@ TBA
 TBA
 
 Notice that the docker image is based on [container-xrdp](https://github.com/danchitnis/container-xrdp)
+
+## ngspice mirror
+
+![Mirror CI](https://github.com/danchitnis/ngspice/workflows/Mirror%20CI/badge.svg)
+https://github.com/danchitnis/ngspice-sf-mirror
 
 ## Details
 
