@@ -34,6 +34,8 @@ This will create a new directory `build` which has the generated JS and WASM run
 
 ## Linux
 
+![Linux Build CI](https://github.com/danchitnis/ngspice/workflows/Linux%20Build%20CI/badge.svg)
+
 First clone the repository:
 
 ```bash
