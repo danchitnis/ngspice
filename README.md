@@ -34,7 +34,27 @@ This will create a new directory `build` which has the generated JS and WASM run
 
 ## Linux
 
-TBA
+First clone the repository:
+
+```bash
+git clone https://github.com/danchitnis/ngspice.git
+cd ngspice
+```
+
+Build the [Docker](https://www.docker.com/) image:
+
+```bash
+cd linux
+sudo docker build -t ngspice:linux .
+```
+
+Run the Docker image:
+
+```bash
+docker run -it -v $(realpath .):/mnt ngspice:linux
+```
+
+This will create a new directory `build` which contains the generated `ngspice` executable
 
 ## Windows
 

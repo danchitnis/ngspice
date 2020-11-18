@@ -1,0 +1,43 @@
+name: EMCC Build CI
+
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+      
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+        cd ./emcc
+        docker build -t ngspice:emcc .
+        
+    - name: Run Docker
+      run: |
+        mkdir image
+        cd image
+        docker run -t -v $(realpath .):/mnt ngspice:emcc
+    
+    - name: test
+      run: |
+        pwd
+        ls
+        ls image
+        ls image/build
+        
+    - name: Archive Output
+      uses: actions/upload-artifact@v2
+      with:
+        name: emcc output
+        path: image/build

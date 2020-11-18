@@ -1,0 +1,53 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Mirror CI
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 8 * * *'
+      
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+
+env: 
+  GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+jobs:
+  Mirror:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+    #- uses: actions/checkout@v2
+    - name: Clone SF
+      run: |
+        git clone --mirror https://git.code.sf.net/p/ngspice/ngspice.git
+        cd ngspice.git
+        echo -e 'git clone completed'
+        git config --global user.name danchitnis
+        git config --global user.email 'danchitnis@users.noreply.github.com'
+        git remote set-url --push origin https://danchitnis:$GITHUB_TOKEN@github.com/danchitnis/ngspice-sf-mirror
+        echo -e 'git setup completed'
+        
+    - name: Fetch SF
+      run: |
+        cd ngspice.git
+        git fetch -p origin
+        
+    - name: Push GH
+      run: |
+        cd ngspice.git
+        git push --mirror
+        echo -e 'git push completed'
+
+
+
