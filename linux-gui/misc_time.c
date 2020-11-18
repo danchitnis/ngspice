@@ -15,27 +15,26 @@ Copyright 1990 Regents of the University of California.  All rights reserved.
 #endif
 
 #ifdef HAVE_GETRUSAGE
-#  include <sys/types.h>
-#  include <sys/time.h>
-#  include <sys/resource.h>
+#include <sys/types.h>
+#include <sys/time.h>
+#include <sys/resource.h>
 #else
-#  ifdef HAVE_TIMES
-#    include <sys/types.h>
-#    include <sys/times.h>
-#    include <sys/param.h>
-#  else
-#    ifdef HAVE_FTIME
+#ifdef HAVE_TIMES
+#include <sys/types.h>
+#include <sys/times.h>
+#include <sys/param.h>
+#else
+#ifdef HAVE_FTIME
 /* default to ftime if we can't get real CPU times */
-#      include <sys/types.h>
-#      include <sys/timeb.h>
-#    endif
-#  endif
+#include <sys/types.h>
+#include <sys/timeb.h>
+#endif
+#endif
 #endif
 
 #ifdef HAVE_FTIME
-#  include <sys/timeb.h>
+#include <sys/timeb.h>
 #endif
-
 
 /* Return the date. Return value is static data. */
 
@@ -53,8 +52,8 @@ datestring(void)
     time(&tloc);
     tp = localtime(&tloc);
     ap = asctime(tp);
-    (void) sprintf(tbuf, "%.20s", ap);
-    (void) strcat(tbuf, ap + 19);
+    (void)sprintf(tbuf, "%.20s", ap);
+    (void)strcat(tbuf, ap + 19);
     i = strlen(tbuf);
     tbuf[i - 1] = '\0';
     return (tbuf);
@@ -75,14 +74,14 @@ struct timeb timebegin;
 void timediff(struct timeb *now, struct timeb *begin, int *sec, int *msec)
 {
 
-    *msec = (int) now->millitm - (int) begin->millitm;
-    *sec = (int) now->time - (int) begin->time;
-    if (*msec < 0) {
-      *msec += 1000;
-      (*sec)--;
+    *msec = (int)now->millitm - (int)begin->millitm;
+    *sec = (int)now->time - (int)begin->time;
+    if (*msec < 0)
+    {
+        *msec += 1000;
+        (*sec)--;
     }
     return;
-
 }
 
 #endif
@@ -101,7 +100,7 @@ seconds(void)
     struct tms tmsbuf;
 
     times(&tmsbuf);
-    return((double) tmsbuf.tms_utime / HZ);
+    return ((double)tmsbuf.tms_utime / HZ);
 
 #else
 #ifdef HAVE_FTIME
@@ -110,11 +109,11 @@ seconds(void)
 
     ftime(&timenow);
     timediff(&timenow, &timebegin, &sec, &msec);
-    return(sec + (double) msec / 1000.0);
+    return (sec + (double)msec / 1000.0);
 
 #else /* unknown */
     /* don't know how to do this in general. */
-    return(-1.0);	/* Obvious error condition */
+    return (-1.0); /* Obvious error condition */
 
 #endif /* !FTIME */
 #endif /* !SYSV */
