@@ -24,7 +24,9 @@ cd ngspice-ngspice
 
 #https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
 #https://sourceforge.net/p/ngspice/patches/99/
+#https://sed.js.org/
 sed -i 's/-Wno-unused-but-set-variable/-Wno-unused-const-variable/g' ./configure.ac
+sed -i 's/AC_CHECK_FUNCS(\[time getrusage\])/AC_CHECK_FUNCS(\[time\])/g' ./configure.ac
 
 ./autogen.sh
 mkdir release

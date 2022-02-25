@@ -21,7 +21,7 @@ Build the [Docker](https://www.docker.com/) image:
 
 ```bash
 cd emcc
-sudo docker build -t ngspice:emcc .
+docker build -t ngspice:emcc .
 ```
 
 Run the Docker image:
