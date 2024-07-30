@@ -1,22 +1,21 @@
 name: Ubuntu Build CI
 
-on: 
+on:
   workflow_dispatch:
     inputs:
       logLevel:
         description: 'Log level'     
         required: true
         default: 'warning'
-     
-      
+  schedule:
+    - cron: '0 5 * * 0'  # Runs at 5:00 AM UTC every Sunday
+
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
         cd ./linux-ubuntu
@@ -36,7 +35,7 @@ jobs:
         ls image/build
         
     - name: Archive Output
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: linux output
         path: image/build
