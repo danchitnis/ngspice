@@ -9,7 +9,7 @@ cd ngspice-ngspice || { echo "Failed to change directory to ngspice-ngspice"; ex
 ./autogen.sh || { echo "autogen.sh failed"; exit 1; }
 mkdir release || { echo "Failed to create release directory"; exit 1; }
 cd release || { echo "Failed to change directory to release"; exit 1; }
-../configure --disable-debug --enable-openmp || { echo "Configure failed"; exit 1; }
+../configure --disable-debug --enable-openmp --with-readline=no || { echo "Configure failed"; exit 1; }
 
 make || { echo "Make failed"; exit 1; }
 
