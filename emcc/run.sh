@@ -39,7 +39,7 @@ sed -i 's/AC_CHECK_FUNCS(\[time getrusage\])/AC_CHECK_FUNCS(\[time\])/g' ./confi
 mkdir release || handle_error "Failed to create release directory"
 cd release || handle_error "Failed to change directory to release"
 
-emconfigure ../configure --disable-debug || handle_error "Failed to run emconfigure"
+emconfigure ../configure --disable-debug --with-readline=no --disable-openmp --disable-xspice || handle_error "Failed to run emconfigure"
 
 wait
 
