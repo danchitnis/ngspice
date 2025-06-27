@@ -11,7 +11,7 @@ mkdir release || { echo "Failed to create release directory"; exit 1; }
 cd release || { echo "Failed to change directory to release"; exit 1; }
 ../configure --disable-debug --enable-openmp --with-readline=no || { echo "Configure failed"; exit 1; }
 
-make || { echo "Make failed"; exit 1; }
+make -j || { echo "Make failed"; exit 1; }
 
 cd src || { echo "Failed to change directory to src"; exit 1; }
 mkdir -p /mnt/build || { echo "Failed to create /mnt/build directory"; exit 1; }
