@@ -16,26 +16,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
-    - name: Build the Docker image
+    - name: Build ngspice
       run: |
         cd ./linux
-        docker build -t ngspice .
-        
-    - name: Run Docker
-      run: |
-        mkdir image
-        cd image
-        docker run -t -v $(realpath .):/mnt ngspice
-    
-    - name: test
-      run: |
-        pwd
-        ls
-        ls image
-        ls image/build
+        chmod +x build.sh
+        ./build.sh
         
     - name: Archive Output
       uses: actions/upload-artifact@v7
       with:
         name: linux output
-        path: image/build
+        path: linux/ngspice

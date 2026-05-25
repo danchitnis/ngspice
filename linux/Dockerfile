@@ -5,13 +5,6 @@ RUN apt -y update && \
     apt clean all
 
 
-COPY ./run.sh /
-RUN chmod +x /run.sh
-
-
-ENTRYPOINT ["/run.sh"]
-
-
 
 
 
