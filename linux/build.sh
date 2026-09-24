@@ -1,6 +1,15 @@
 #!/bin/bash
 set -e
 
+cd "$(dirname "$0")"
+if [ "${1:-}" = "--osdi" ] && [ "$#" -eq 1 ]; then
+    exec bash osdi/build-host.sh
+fi
+if [ "$#" -ne 0 ]; then
+    echo "Usage: $0 [--osdi]" >&2
+    exit 2
+fi
+
 echo "========================================"
 echo " Building ngspice Linux Executable"
 echo "========================================"
@@ -35,7 +44,7 @@ docker exec ngspice-builder sh -c "
     mkdir -p release
     cd release
     ../configure --disable-debug --enable-openmp --with-readline=no
-    make -j$(nproc)
+    make -j\$(nproc)
 "
 
 # 5. Copy out the ngspice executable

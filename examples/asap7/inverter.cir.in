@@ -1,0 +1,12 @@
+ASAP7 RVT @CORNER@ CMOS inverter
+.include ../../models/asap7/modelcard.ASAP7_RVT_@CORNER@
+VDD vdd 0 0.7
+VIN in 0 0
+NN out in 0 0 ASAP7_RVT_@CORNER@_N L=21n NFIN=1
+NP out in vdd vdd ASAP7_RVT_@CORNER@_P L=21n NFIN=1
+.control
+pre_osdi ../../catalog.osdi
+.endc
+.dc VIN 0 0.7 0.1
+.print dc v(out)
+.end

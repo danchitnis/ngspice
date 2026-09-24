@@ -1,0 +1,12 @@
+PKP3 LVT @CORNER@ CMOS inverter
+.include ../../models/pkp3/modelcard.PKP3_LVT_@CORNER@
+VDD vdd 0 0.7
+VIN in 0 0
+NN out in 0 0 PKP3_LVT_@CORNER@_N L=16n W=35n NF=1
+NP out in vdd vdd PKP3_LVT_@CORNER@_P L=16n W=35n NF=1
+.control
+pre_osdi ../../catalog.osdi
+.endc
+.dc VIN 0 0.7 0.1
+.print dc v(out)
+.end

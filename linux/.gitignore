@@ -1,2 +1,4 @@
 ngspice-ngspice/
 ngspice
+build/
+__pycache__/
