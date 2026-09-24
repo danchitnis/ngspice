@@ -7,7 +7,7 @@ Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/
 
 ## Linux
 
-![Linux Build CI](https://github.com/danchitnis/ngspice/workflows/Linux%20Build%20CI/badge.svg)
+[![Ubuntu Build CI](https://github.com/danchitnis/ngspice/actions/workflows/linux.yml/badge.svg)](https://github.com/danchitnis/ngspice/actions/workflows/linux.yml)
 
 Clone the repository and run the standard Linux build (Docker is required):
 
@@ -49,18 +49,15 @@ The OSDI build fetches the current default branches of ngspice, OpenVAF Reloaded
 
 Use OSDI `N` devices with drain, gate, source, bulk terminals. ASAP7 uses `L=21n NFIN=1`; PKP3 uses `L=16n W=35n NF=1` in the included examples.
 
+## WASM
 
-
+For a WASM build, see [EEcircuit-engine](https://github.com/eelab-dev/EEcircuit-engine).
 
 ## Ngspice mirror
 
 ![Mirror CI](https://github.com/danchitnis/ngspice/workflows/Mirror%20CI/badge.svg)
 
 https://github.com/danchitnis/ngspice-sf-mirror
-
-## Details
-
-See: https://sourceforge.net/p/ngspice/patches/99/
 
 ## Contributions
 
