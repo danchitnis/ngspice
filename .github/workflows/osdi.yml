@@ -1,0 +1,24 @@
+name: Ubuntu OSDI Build CI
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * 1'  # Runs at 7:00 AM UTC every Monday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+    - name: Build ngspice with OSDI
+      run: |
+        cd ./linux
+        chmod +x build.sh
+        ./build.sh --osdi
+
+    - name: Archive OSDI output
+      uses: actions/upload-artifact@v7
+      with:
+        name: linux-osdi
+        path: linux/build/osdi/

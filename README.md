@@ -8,6 +8,7 @@ Docker environment to build [ngspice](https://sourceforge.net/p/ngspice/ngspice/
 ## Linux
 
 [![Ubuntu Build CI](https://github.com/danchitnis/ngspice/actions/workflows/linux.yml/badge.svg)](https://github.com/danchitnis/ngspice/actions/workflows/linux.yml)
+[![Ubuntu OSDI Build CI](https://github.com/danchitnis/ngspice/actions/workflows/osdi.yml/badge.svg)](https://github.com/danchitnis/ngspice/actions/workflows/osdi.yml)
 
 Clone the repository and run the standard Linux build (Docker is required):
 

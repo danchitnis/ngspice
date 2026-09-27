@@ -3,20 +3,12 @@ name: Ubuntu Build CI
 on:
   workflow_dispatch:
     inputs:
-      profile:
-        description: 'Build profile'
-        type: choice
-        options:
-          - standard
-          - osdi
-        default: standard
-        required: true
       logLevel:
         description: 'Log level'     
         required: true
         default: 'warning'
   schedule:
-    - cron: '0 7 * * 0'  # Runs at 5:00 AM UTC every Sunday
+    - cron: '0 7 * * 0'  # Runs at 7:00 AM UTC every Sunday
 
 jobs:
   build:
@@ -28,21 +20,10 @@ jobs:
       run: |
         cd ./linux
         chmod +x build.sh
-        if [ "${{ github.event.inputs.profile }}" = "osdi" ]; then
-          ./build.sh --osdi
-        else
-          ./build.sh
-        fi
-        
+        ./build.sh
+
     - name: Archive standard output
-      if: github.event.inputs.profile != 'osdi'
       uses: actions/upload-artifact@v7
       with:
         name: linux-standard
         path: linux/ngspice
-    - name: Archive OSDI output
-      if: github.event.inputs.profile == 'osdi'
-      uses: actions/upload-artifact@v7
-      with:
-        name: linux-osdi
-        path: linux/build/osdi/
